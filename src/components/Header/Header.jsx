@@ -1,24 +1,25 @@
 import React, { useRef } from "react";
 import { Container } from "reactstrap";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   {
     display: "Home",
-    url: "#",
+    url: "/",
   },
   {
     display: "About",
-    url: "#",
+    url: "/about",
   },
 
   {
-    display: "Courses",
-    url: "#",
+    display: "Lesson Plan",
+    url: "/lessonplan",
   },
   {
     display: "Pages",
-    url: "#",
+    url: "/",
   },
   {
     display: "Blog",
@@ -46,7 +47,7 @@ const Header = () => {
               <ul className="nav__list">
                 {navLinks.map((item, index) => (
                   <li key={index} className="nav__item">
-                    <a href={item.url}>{item.display}</a>
+                    <Link to={item.url}>{item.display}</Link>
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Header from "../components/Header/Header";
+// import Header from "../components/Header/Header";
 import HeroSection from "../components/Hero-Section/HeroSection";
 import CompanySection from "../components/Company-section/Company";
 
@@ -12,12 +12,12 @@ import FreeCourse from "../components/Free-course-section/FreeCourse";
 import Testimonials from "../components/Testimonial/Testimonials";
 
 import Newsletter from "../components/Newsletter/Newsletter";
-import Footer from "../components/Footer/Footer";
+// import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
     <Fragment>
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <CompanySection />
       <AboutUs />
@@ -27,7 +27,7 @@ const Home = () => {
       <FreeCourse />
       <Testimonials />
       <Newsletter />
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };
