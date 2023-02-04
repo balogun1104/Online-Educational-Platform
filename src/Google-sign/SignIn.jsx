@@ -1,35 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { provider, auth } from "./config";
-import { signInWithPopup } from "firebase/auth";
-import GoogleSign from "./GoogleSign";
+import React from 'react'
+import {GoogleButton } from 'react-google-button';
+import { UserAuth } from '../context/AuthContext';
 
 const SignIn = () => {
-  const [signInValue, setSignInValue] = useState("");
-  const signInHandler = () => {
-    signInWithPopup(auth, provider).then((data) => {
-      setSignInValue(data.user.email);
-      localStorage.setItem("email", data.user.email);
-      localStorage.setItem("name", data.user.displayName);
-    });
-    
-  };
-  
- 
-
-  useEffect(() => {
-    localStorage.getItem("email");
-  });
-
-
+    const handleGoogleSignIn = async () => {
+        const {googleSignIn} = UserAuth()
+        try {
+            await googleSignIn()
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
   return (
     <div>
-      {signInValue ? (
-        <GoogleSign/>
-      ) : (
-        <button onClick={signInHandler}>Sign In With Google</button>
-      )}
+        <h2>Sign In</h2>
+        <GoogleButton onClick={handleGoogleSignIn}/>
     </div>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn
