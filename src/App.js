@@ -1,24 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import LessonPlan from "./pages/LessonPlan";
 import About from "./pages/About";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
-import { AuthContextProvider } from "./context/AuthContext";
+import LoginPage from "./components/Login/Login";
+import SignUpPage from "./components/SignIn/SignUp";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/lessonplan" element={<LessonPlan />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </AuthContextProvider>
+    <>
+      <Header />
+      <UserAuthContextProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/lessonplan" element={<LessonPlan />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+      </Routes>
+      </UserAuthContextProvider>
+      <Footer />
+    </>
   );
 }
 

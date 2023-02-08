@@ -22,8 +22,8 @@ const navLinks = [
     url: "/",
   },
   {
-    display: "Blog",
-    url: "#",
+    display: "Login",
+    url: "/login",
   },
 ];
 

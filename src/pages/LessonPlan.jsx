@@ -1,11 +1,11 @@
 import React from 'react'
-import MyForm from "../components/Form-Section/Form"
-import SignIn from '../Google-sign/SignIn'
+import SignUpPage from '../components/SignIn/SignUp'
+
 
 const LessonPlan = () => {
   return (
     <>
-  <SignIn />
+ <SignUpPage/>
     
     </>
   )
