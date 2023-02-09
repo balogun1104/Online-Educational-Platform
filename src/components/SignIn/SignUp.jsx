@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import styles from "./SignIn.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useUserAuth } from "../../context/UserAuthContext";
-
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const  {signUp}  = useUserAuth()
-
+  const { signUp } = useUserAuth();
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setError('')
+      setError("");
       await signUp(email, password);
-
+      navigate('/welcomeuser')
+      
     } catch (err) {
-      setError(err.message)
+      setError(err.message);
     }
   };
   return (
     <div className={styles.container}>
-       {error && <Alert variant="danger">{error}</Alert>}
+      {error && <Alert variant="danger">{error}</Alert>}
       <h1 className={styles.title}>
         SignUp To Your Electronic Lesson-Note Account
       </h1>
