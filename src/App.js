@@ -9,8 +9,10 @@ import SignUpPage from "./components/SignIn/SignUp";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import WelcomeUserPage from "./pages/WelcomeUserPage";
+import { useState } from "react";
 
 function App() {
+  const [showHeader, setShowHeader] = useState(true)
   return (
     <>
       <Header />
