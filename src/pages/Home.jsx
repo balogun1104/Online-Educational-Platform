@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-// import Header from "../components/Header/Header";
+import HeaderAll from "../components/Header/HeaderAll";
 import HeroSection from "../components/Hero-Section/HeroSection";
 import CompanySection from "../components/Company-section/Company";
 
@@ -17,7 +17,7 @@ import Newsletter from "../components/Newsletter/Newsletter";
 const Home = () => {
   return (
     <Fragment>
-      {/* <Header /> */}
+       <HeaderAll /> 
       <HeroSection />
       <CompanySection />
       <AboutUs />
