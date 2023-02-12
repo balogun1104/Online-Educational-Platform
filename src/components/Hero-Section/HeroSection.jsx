@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import heroImg from "../../assests/images/hero-img1.png";
 import "./hero-section.css";
+import  motion  from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -24,10 +25,15 @@ const HeroSection = () => {
               <button className="btn">Search</button>
             </div>
           </Col>
-
+          <motion.div
+                initial={{ x: "-200vw" }}
+                animate={{ x: 0 }}
+                transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
+              >
           <Col lg="6" md="6">
             <img src={heroImg} alt="" className="w-100 hero__img" />
           </Col>
+          </motion.div>
         </Row>
       </Container>
     </section>
