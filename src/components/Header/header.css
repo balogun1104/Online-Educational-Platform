@@ -10,6 +10,7 @@
   list-style: none;
   display: flex;
   column-gap: 1.3rem;
+ 
 }
 
 .nav__item a {
@@ -18,10 +19,12 @@
   color: #0a2b1e;
   text-decoration: none;
   transition: 0.3s;
+  
 }
 
 .nav__item a:hover {
   color: #17bf9e;
+  
 }
 
 .nav__right p {

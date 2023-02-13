@@ -4,6 +4,7 @@ import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useUserAuth } from "../../context/UserAuthContext";
+import HeaderAll from "../Header/HeaderAll";
 
 
 const LoginPage = () => {
@@ -34,6 +35,8 @@ const LoginPage = () => {
     }
   };
   return (
+    <>
+    <HeaderAll />
     <div className={styles.container}>
       {error && <Alert variant="danger">{error}</Alert>}
       <h1 className={styles.title}>Login To Electronic Lesson-Note</h1>
@@ -64,6 +67,7 @@ const LoginPage = () => {
         </div>
       </form>
     </div>
+    </>
   );
 };
 

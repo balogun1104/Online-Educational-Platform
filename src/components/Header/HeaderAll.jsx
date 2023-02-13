@@ -18,8 +18,8 @@ const navLinks = [
     url: "/lessonplan",
   },
   {
-    display: "Pages",
-    url: "/",
+    display: "Login",
+    url: "/login",
   },
   {
     display: "Sign Up",
@@ -38,7 +38,7 @@ const HeaderAll = () => {
         <div className="navigation d-flex align-items-center justify-content-between">
           <div className="logo">
             <h2 className=" d-flex align-items-center gap-1">
-              <i class="ri-pantone-line"></i> Learners.
+              <i class="ri-pantone-line"></i> E-LNote
             </h2>
           </div>
 

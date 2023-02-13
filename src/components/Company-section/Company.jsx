@@ -1,10 +1,16 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import {motion } from 'framer-motion'
 
 const Company = () => {
   return (
     <section>
       <Container>
+      <motion.div
+                initial={{ x: -1500 }}
+                animate={{ x: 0}}
+                transition={{ type: "spring", stiffness: 50, delay: 1.5 }}
+              >
         <Row>
           <Col lg="2" md="3" sm="4" xs="6">
             <h3 className=" d-flex align-items-center gap-1">
@@ -45,6 +51,7 @@ const Company = () => {
             </h2>
           </Col>
         </Row>
+        </motion.div>
       </Container>
     </section>
   );
