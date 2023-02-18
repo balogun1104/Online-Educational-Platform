@@ -14,7 +14,7 @@ const navLinks = [
   },
 
   {
-    display: "Lesson Plan",
+    display: "Login As a Supervisor",
     url: "/lessonplan",
   },
   {

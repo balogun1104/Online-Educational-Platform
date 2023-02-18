@@ -56,7 +56,7 @@ const LoginPage = () => {
         <button className={styles.button}>Login</button>
 
         <div className={styles.googleLogin}>
-          <p className={styles.googleLoginText}>Sign in with Google</p>
+          <p className={styles.googleLoginText}>Continue with Google Account</p>
           <GoogleButton onClick={handleGoogleLogin} />
         </div>
 
