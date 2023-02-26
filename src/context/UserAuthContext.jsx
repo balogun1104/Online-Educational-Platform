@@ -13,13 +13,14 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState("");
+  const [matricNumber, setMatricNumber] = useState("");
 
-  function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
+  function signUp(email, password, matricNumber) {
+    return createUserWithEmailAndPassword(auth, email, password, matricNumber);
   }
 
-  function logIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+  function logIn(email, password, matricNumber) {
+    return signInWithEmailAndPassword(auth, email, password, matricNumber);
   }
 
   function logOut() {
@@ -35,6 +36,7 @@ export function UserAuthContextProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       console.log("Auth", currentuser);
       setUser(currentuser);
+      setMatricNumber(currentuser);
     });
 
     return () => {
@@ -43,7 +45,7 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   return (
-    <userAuthContext.Provider value={{ user, signUp, logIn, logOut, googleSignIn }}>
+    <userAuthContext.Provider value={{ matricNumber, user, signUp, logIn, logOut, googleSignIn }}>
       {children}
     </userAuthContext.Provider>
   );
