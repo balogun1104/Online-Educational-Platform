@@ -21,10 +21,10 @@ const Home = () => {
       <HeroSection />
       <CompanySection />
       <AboutUs />
-      <Courses />
+      {/* <Courses /> */}
       <ChooseUs />
       <Features />
-      <FreeCourse />
+      {/* <FreeCourse /> */}
       <Testimonials />
       <Newsletter />
       {/* <Footer /> */}

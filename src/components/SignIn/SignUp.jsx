@@ -8,6 +8,7 @@ const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [matricNumber, setMatricNumber] = useState("");
 
   const { signUp } = useUserAuth();
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const SignUpPage = () => {
     e.preventDefault();
     try {
       setError("");
-      await signUp(email, password);
+      await signUp(email, password, matricNumber);
       navigate('/welcomeuser')
       
     } catch (err) {
@@ -40,6 +41,12 @@ const SignUpPage = () => {
           placeholder="Password"
           className={styles.input}
           onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Your Matric Number"
+          className={styles.input}
+          onChange={(e) => setMatricNumber(e.target.value)}
         />
         <button className={styles.button}>Sign Up</button>
 
