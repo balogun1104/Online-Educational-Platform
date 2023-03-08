@@ -7,20 +7,20 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState("");
-  const [matricNumber, setMatricNumber] = useState("");
+ 
 
-  function signUp(email, password, matricNumber) {
-    return createUserWithEmailAndPassword(auth, email, password, matricNumber);
+  function signUp(email, password,fullName) {
+    return createUserWithEmailAndPassword(auth, email, password, fullName);
   }
 
-  function logIn(email, password, matricNumber) {
-    return signInWithEmailAndPassword(auth, email, password, matricNumber);
+  function logIn(email, password, fullName) {
+    return signInWithEmailAndPassword(auth, email, password, fullName);
   }
 
   function logOut() {
@@ -29,14 +29,14 @@ export function UserAuthContextProvider({ children }) {
 
   function googleSignIn() {
      const googleAuthProvider = new GoogleAuthProvider()
-        return signInWithPopup(auth, googleAuthProvider)
+        return signInWithPopup(auth, googleAuthProvider, db)
   }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       console.log("Auth", currentuser);
       setUser(currentuser);
-      setMatricNumber(currentuser);
+     
     });
 
     return () => {
@@ -45,7 +45,7 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   return (
-    <userAuthContext.Provider value={{ matricNumber, user, signUp, logIn, logOut, googleSignIn }}>
+    <userAuthContext.Provider value={{ user, signUp, logIn, logOut, googleSignIn }}>
       {children}
     </userAuthContext.Provider>
   );
