@@ -3,25 +3,50 @@ import styles from "./SignIn.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useUserAuth } from "../../context/UserAuthContext";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase";
+
+
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
   const [error, setError] = useState("");
-  const [matricNumber, setMatricNumber] = useState("");
 
   const { signUp } = useUserAuth();
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      setError("");
-      await signUp(email, password, matricNumber);
-      navigate('/welcomeuser')
+
+    await signUp(email, password).then(
+      async(result) => {
+        console.log(result)
+        try {
+          setError('')
+          const docRef = await addDoc(collection(db, "users"), {
+            fullName, 
+            userId: `${result.user.uid}`
+          })
+          navigate("/welcomeuser")
+          alert('New user Created successfully')
+          console.log("Document created with ID: ",  docRef.id)
+        } catch (error) {
+          setError(error.message)
+        }
+      }
+    )
+
+    // try {
+    //   setError("");
+     
       
-    } catch (err) {
-      setError(err.message);
-    }
+    //   await signUp(email, password, fullName);
+    //   navigate("/welcomeuser");
+    // } catch (err) {
+    //   setError(err.message);
+    // }
   };
   return (
     <div className={styles.container}>
@@ -30,6 +55,14 @@ const SignUpPage = () => {
         SignUp To Your Electronic Lesson-Note Account
       </h1>
       <form onSubmit={handleSubmit} className={styles.form}>
+      <input
+          type="text"
+          placeholder="Full Name"
+          className={styles.input}
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+        />
+
         <input
           type="email"
           placeholder="Email"
@@ -42,12 +75,7 @@ const SignUpPage = () => {
           className={styles.input}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Your Matric Number"
-          className={styles.input}
-          onChange={(e) => setMatricNumber(e.target.value)}
-        />
+
         <button className={styles.button}>Sign Up</button>
 
         <div className={styles.signup}>
