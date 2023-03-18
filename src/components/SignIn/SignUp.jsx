@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SignIn.module.css";
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useUserAuth } from "../../context/UserAuthContext";
@@ -20,36 +21,46 @@ const SignUpPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signUp(email, password).then(
-      async(result) => {
-        console.log(result)
-        try {
-          setError('')
-          const docRef = await addDoc(collection(db, "users"), {
-            fullName, 
-            userId: `${result.user.uid}`
-          })
-          navigate("/welcomeuser")
-          alert('New user Created successfully')
-          console.log("Document created with ID: ",  docRef.id)
-        } catch (error) {
-          setError(error.message)
-        }
-      }
-    )
+    // await signUp(email, password).then(
+    //   async(result) => {
+    //     console.log(result)
+    //     try {
+    //       setError('')
+    //       const docRef = await addDoc(collection(db, "users"), {
+    //         fullName, 
+    //         userId: `${result.user.uid}`
+    //       })
+    //       navigate("/welcomeuser")
+    //       alert('New user Created successfully')
+    //       console.log("Document created with ID: ",  docRef.id)
+    //     } catch (error) {
+    //       setError(error.message)
+    //     }
+    //   }
+    // )
+    const data = {
+      fullName
+    }
 
-    // try {
-    //   setError("");
-     
-      
-    //   await signUp(email, password, fullName);
-    //   navigate("/welcomeuser");
-    // } catch (err) {
-    //   setError(err.message);
-    // }
+try {
+  const user = await signUp(email, password) 
+  const {uid} = user.user
+  console.log(uid)
+  const res = await db.collection("users").doc(uid).set(data)
+  
+  console.log(res)
+  
+  navigate("/welcomeuser")
+} catch (error) {
+  setError(error.message)
+}
+  
   };
   return (
     <div className={styles.container}>
+      <Helmet>
+        <title>E-LNOTE | SignUp</title>
+      </Helmet>
       {error && <Alert variant="danger">{error}</Alert>}
       <h1 className={styles.title}>
         SignUp To Your Electronic Lesson-Note Account
