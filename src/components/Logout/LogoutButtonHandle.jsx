@@ -26,14 +26,15 @@ const LogoutButtonHandle = () => {
     <>
       <button onClick={handleLogoutClick}>Logout</button>
      
-        <Modal show={showModal}  className={styles.modalWrapper}>
+     {/* <div className={styles.modalWrapper}> */}
+        <Modal show={showModal}  className={styles.modal}>
          
           <h1>Are you sure you want to logout?</h1>
-          <button onClick={handleLogout}>Yes</button>
+          <button className={styles.bottonModal} onClick={handleLogout}>Yes</button>
           <button onClick={() => setShowModal(false)}>No</button>
          
         </Modal>
-      
+      {/* </div> */}
     </>
   );
 };

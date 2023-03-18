@@ -16,13 +16,14 @@ const ChooseUs = () => {
             <div className="choose__content">
               <h2>Why Choose Us</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt mollitia nostrum harum eos praesentium odit a sed quod
-                aut fugit. Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Reprehenderit omnis, culpa eligendi inventore perspiciatis
-                minus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores cupiditate facilis provident quidem accusamus impedit
-                tenetur laboriosam debitis nisi eius!
+                Electronic Lesson Note is a valuable tool for educators and
+                students. It provides a convenient and efficient way to create,
+                manage, and share lesson plans, track student progress, and
+                analyze data. ELN saves time and effort, improves collaboration,
+                and enhances the learning experience for students. With the
+                increasing availability of technology, ELN is quickly becoming a
+                standard tool in the education sector, and it is expected to
+                become even more prevalent in the future.
               </p>
             </div>
           </Col>

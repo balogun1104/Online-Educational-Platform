@@ -1,11 +1,23 @@
 .hero__content h2 {
   font-weight: 600;
-  line-height: 55px;
+  line-height: 30px;
 }
 
 .hero__content {
   padding-top: 80px;
 }
+.hero__content p{
+ line-height: 25px;
+ width: 350px;
+}
+.imageContainer{
+ 
+  padding-top: 2em;
+
+}
+.hero__img{
+  border-radius: 8px;;
+ }
 .search input {
   border: none;
   outline: none;
@@ -14,7 +26,7 @@
 
 .search {
   width: 60%;
-  border: 1px solid #17bf9d44;
+  border: 1px solid #00000044;
   display: flex;
   justify-content: space-between;
   align-items: center;
