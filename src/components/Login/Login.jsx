@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useUserAuth } from "../../context/UserAuthContext";
 import HeaderAll from "../Header/HeaderAll";
+import { Helmet } from "react-helmet";
 
 
 const LoginPage = () => {
@@ -36,6 +37,9 @@ const LoginPage = () => {
   };
   return (
     <>
+    <Helmet>
+        <title>E-LNOTE | Login</title>
+      </Helmet>
     <HeaderAll />
     <div className={styles.container}>
       {error && <Alert variant="danger">{error}</Alert>}

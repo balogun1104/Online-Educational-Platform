@@ -12,11 +12,16 @@ import FreeCourse from "../components/Free-course-section/FreeCourse";
 import Testimonials from "../components/Testimonial/Testimonials";
 
 import Newsletter from "../components/Newsletter/Newsletter";
+import { Helmet } from 'react-helmet';
+
 // import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
     <Fragment>
+      <Helmet>
+        <title>E-LNOTE | Home</title>
+      </Helmet>
        <HeaderAll /> 
       <HeroSection />
       <CompanySection />
