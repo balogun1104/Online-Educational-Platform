@@ -24,12 +24,12 @@ h6 {
   font-size: 2rem;
   line-height: 50px;
   font-family: "Poppins", sans-serif;
-  color: #0a2b1e;
+  color: #000000;
   font-weight: 600;
 }
 
 p {
-  color: #596b65;
+  color: #151515;
   font-size: 1rem;
   line-height: 35px;
   font-family: "Andada Pro", serif;
@@ -37,12 +37,12 @@ p {
 }
 
 button.btn {
-  background: #17bf9e;
+  background:#2158fb;
   color: #fff;
   padding: 7px 25px;
   border-radius: 50px;
 }
 
 i {
-  color: #17bf9e;
+  color: #2158fb;
 }

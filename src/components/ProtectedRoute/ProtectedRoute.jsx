@@ -8,9 +8,11 @@ const ProtectedRoute = ({children}) => {
 
   if(!user){
    return <Navigate to='/' />
+  } else {
+    return children;
   }
 
-  return children;
+ 
     
 }
 

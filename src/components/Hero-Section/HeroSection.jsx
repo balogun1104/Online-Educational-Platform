@@ -11,13 +11,11 @@ const HeroSection = () => {
         <Row>
           <Col lg="6" md="6">
             <div className="hero__content">
-              <h2 className="mb-4 hero__title">
-                Anytime Anywhere <br /> Learn on your <br /> Suitable Schedule
-              </h2>
+              <h3 className="mb-4 hero__title">
+              Revolutionizing the way teachers manage their lesson plans with electronic lesson notes
+              </h3>
               <p className="mb-5">
-                Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit.
-                Aut saepe voluptatum earum delectus <br /> deserunt id iste,
-                quas officiis et repellat!
+              Welcome to Electronic Lesson Note <br/>Your One-Stop Shop for Effective Classroom Management!
               </p>
             </div>
             <div className="search">
@@ -26,7 +24,7 @@ const HeroSection = () => {
             </div>
           </Col>
          
-          <Col lg="6" md="6">
+          <Col lg="6" md="6" className="imageContainer">
           <motion.div
                 initial={{ x: 900 }}
                 animate={{ x: 0}}

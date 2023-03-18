@@ -1,23 +1,19 @@
-
-
-  button {
-    background-color: white;
-    background-color: #4caf50;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-    color: white;
+button {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  color: #2158fb;
   font-size: 16px;
   border-radius: 4px;
   border: none;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-    color: white;
-  }
-  .modalWrapper{
-    margin-top: 10vh;
-    
-    text-align: center;
-  }
+}
+.botton :hover {
+  color: #000000;
+}
+
+Modal {
+ 
+  height: 500px;
+  text-align: center;
+}

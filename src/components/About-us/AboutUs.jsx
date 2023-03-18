@@ -20,47 +20,35 @@ const AboutUs = () => {
             <div className="about__content">
               <h2>About Us</h2>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Excepturi cupiditate animi deserunt libero nesciunt corporis
-                explicabo nobis ex quo molestiae!
+                At Electronic Lesson Note, we believe that teachers are the
+                backbone of society. We understand the challenges teachers face
+                in managing their lesson plans and keeping track of their
+                students' progress. Our mission is to simplify the lesson
+                planning process and empower teachers with a powerful tool that
+                makes their job easier. We have designed an electronic lesson
+                note that is user-friendly, efficient and reliable.
               </p>
 
               <div className="about__counter">
                 <div className=" d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={25} duration={2} suffix="K" />
+                      <CountUp start={0} end={25000} duration={2}  />
                     </span>
 
-                    <p className="counter__title">Completed Projects</p>
+                    <p className="counter__title">Visted Users</p>
                   </div>
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={12} duration={2} suffix="M" />
+                      <CountUp start={0} end={5000} duration={2} />
                     </span>
 
-                    <p className="counter__title">Patient Around World</p>
+                    <p className="counter__title">Current Users</p>
                   </div>
                 </div>
 
-                <div className=" d-flex gap-5 align-items-center">
-                  <div className="single__counter">
-                    <span className="counter">
-                      <CountUp start={0} end={95} duration={2} suffix="M" />
-                    </span>
-
-                    <p className="counter__title">Ideas Raised Funds</p>
-                  </div>
-
-                  <div className="single__counter">
-                    <span className="counter">
-                      <CountUp start={0} end={5} duration={2} suffix="K" />
-                    </span>
-
-                    <p className="counter__title">Categories Served</p>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </Col>
