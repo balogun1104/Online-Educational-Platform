@@ -10,15 +10,9 @@ const WelcomeUserPage = () => {
   return (
     <>
       <div>
-        <HeaderLogin user={user}/>
-        {" "}
-        welcome <br />
-        {user.displayName ? user.displayName : user.email}
+        <HeaderLogin user={user} />
+        
       </div>
-      <img
-        src={user.photoURL}
-        alt={user.displayName ? user.displayName : user.email}
-      />
 
     </>
   );

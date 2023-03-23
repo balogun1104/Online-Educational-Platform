@@ -1,12 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Container } from "reactstrap";
 import "../Header/header.css";
 import { Link } from "react-router-dom";
 import LogoutButtonHandle from "../../components/Logout/LogoutButtonHandle";
 import { useUserAuth } from "../../context/UserAuthContext";
+import { Avatar, Dropdown, Image, Menu } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 const HeaderLogin = () => {
   const { user } = useUserAuth();
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">{user.displayName}</Menu.Item>
+      <Menu.Item key="2">{user.email}</Menu.Item>
+      <Menu.Item key="3">
+        {" "}
+        <LogoutButtonHandle />{" "}
+      </Menu.Item>
+    </Menu>
+  );
 
   const menuRef = useRef();
 
@@ -22,15 +35,18 @@ const HeaderLogin = () => {
             </h2>
           </div>
 
-
-
-          <div className="nav d-flex align-items-center gap-5">
-
-          <LogoutButtonHandle />
-            <img
-              src={user.photoURL}
-              alt={user.displayName ? user.displayName : user.email}
-            />
+          <div className="">
+            <Dropdown overlay={menu} placement="bottomRight">
+              <Avatar>
+                {<img src={user.photoURL} /> ? (
+                  <img src={user.photoURL} />
+                ) : (
+                  <Avatar icon={<UserOutlined />} />
+                )}
+              </Avatar>
+            </Dropdown>
+           <Image 
+           src={user.photoURL}/>
           </div>
 
           <div className="mobile__menu">
