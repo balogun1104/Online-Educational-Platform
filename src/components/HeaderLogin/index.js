@@ -45,8 +45,7 @@ const HeaderLogin = () => {
                 )}
               </Avatar>
             </Dropdown>
-           <Image 
-           src={user.photoURL}/>
+         
           </div>
 
           <div className="mobile__menu">

@@ -3,6 +3,7 @@ import React from "react";
 import { useUserAuth } from "../context/UserAuthContext";
 
 import HeaderLogin from "../components/HeaderLogin";
+import LessonNote from "../components/Lesson-Note";
 
 const WelcomeUserPage = () => {
   const { user } = useUserAuth();
@@ -11,7 +12,7 @@ const WelcomeUserPage = () => {
     <>
       <div>
         <HeaderLogin user={user} />
-        
+        <LessonNote />
       </div>
 
     </>
