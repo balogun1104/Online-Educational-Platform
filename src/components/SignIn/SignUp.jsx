@@ -21,39 +21,39 @@ const SignUpPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // await signUp(email, password).then(
-    //   async(result) => {
-    //     console.log(result)
-    //     try {
-    //       setError('')
-    //       const docRef = await addDoc(collection(db, "users"), {
-    //         fullName, 
-    //         userId: `${result.user.uid}`
-    //       })
-    //       navigate("/welcomeuser")
-    //       alert('New user Created successfully')
-    //       console.log("Document created with ID: ",  docRef.id)
-    //     } catch (error) {
-    //       setError(error.message)
-    //     }
-    //   }
-    // )
-    const data = {
-      fullName
-    }
+    await signUp(email, password).then(
+      async(result) => {
+        console.log(result)
+        try {
+          setError('')
+          const docRef = await addDoc(collection(db, "users"), {
+            fullName, 
+            userId: `${result.user.uid}`
+          })
+          navigate("/welcomeuser")
+          alert('New user Created successfully')
+          console.log("Document created with ID: ",  docRef.id)
+        } catch (error) {
+          setError(error.message)
+        }
+      }
+    )
+//     const data = {
+//       fullName
+//     }
 
-try {
-  const user = await signUp(email, password) 
-  const {uid} = user.user
-  console.log(uid)
-  const res = await db.collection("users").doc(uid).set(data)
+// try {
+//   const user = await signUp(email, password) 
+//   const {uid} = user.user
+//   console.log(uid)
+//   const res = await db.collection("users").doc(uid).set(data)
   
-  console.log(res)
+//   console.log(res)
   
-  navigate("/welcomeuser")
-} catch (error) {
-  setError(error.message)
-}
+//   navigate("/welcomeuser")
+// } catch (error) {
+//   setError(error.message)
+// }
   
   };
   return (

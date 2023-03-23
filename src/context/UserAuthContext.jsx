@@ -29,7 +29,7 @@ export function UserAuthContextProvider({ children }) {
 
   function googleSignIn() {
      const googleAuthProvider = new GoogleAuthProvider()
-        return signInWithPopup(auth, googleAuthProvider, db)
+        return signInWithPopup(auth, googleAuthProvider)
   }
 
   useEffect(() => {

@@ -7,12 +7,13 @@ import {getFirestore} from 'firebase/firestore';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDFvLahAJd2YiIBG0lErb1XBpLWDuUKgMs",
-  authDomain: "elecronic-lesson-note.firebaseapp.com",
-  projectId: "elecronic-lesson-note",
-  storageBucket: "elecronic-lesson-note.appspot.com",
-  messagingSenderId: "476313213505",
-  appId: "1:476313213505:web:7d41a72d64377e9f54c4c0"
+  apiKey: "AIzaSyBha5vfiPCpxlsCK9TO-M73FgtTS5o08Ns",
+  authDomain: "electronic-lesson-no.firebaseapp.com",
+  projectId: "electronic-lesson-no",
+  storageBucket: "electronic-lesson-no.appspot.com",
+  messagingSenderId: "793599837993",
+  appId: "1:793599837993:web:5d12820fffece3eeed5938",
+  measurementId: "G-L8T71H0RFH"
 };
 
 // Initialize Firebase
@@ -23,3 +24,5 @@ export {
   db,
   auth
 };
+
+// Import the functions you need from the SDKs you need
