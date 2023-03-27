@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LessonNoteThree = () => {
+const LessonNoteThree = ({nextStep}) => {
   return (
     <div>LessonNoteThree</div>
   )
