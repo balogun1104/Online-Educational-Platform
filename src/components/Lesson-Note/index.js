@@ -52,7 +52,7 @@ const LessonNote = ({currentModal,
 
     <>
     <div>
-        <h1>Lesson Plan</h1>
+       
         {render()}
     </div>
     </>

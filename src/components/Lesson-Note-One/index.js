@@ -1,5 +1,6 @@
 import { Form, Input, DatePicker, TimePicker, InputNumber, Button } from "antd";
 import { useState } from "react";
+import "./styles.css";
 
 const { RangePicker } = DatePicker;
 
@@ -18,17 +19,10 @@ const LessonNoteOne = ({ nextStep }) => {
     <div className="lessonNoteWrapper">
       <div className="lessonNote">
         <div className="lessonNoteInner">
-          <Form form={form} onFinish={nextStep}>
+        <h1>Lesson Plan</h1>
+          <Form form={form} onFinish={nextStep} className="formWrapper">
             <Form.Item label="Name" name="name">
               <Input />
-            </Form.Item>
-
-            <Form.Item label="Date" name="date">
-              <DatePicker />
-            </Form.Item>
-
-            <Form.Item label="Period" name="period">
-              <InputNumber />
             </Form.Item>
 
             <Form.Item label="School" name="school">
@@ -47,6 +41,14 @@ const LessonNoteOne = ({ nextStep }) => {
               <Input />
             </Form.Item>
 
+            <Form.Item label="Date" name="date">
+              <DatePicker />
+            </Form.Item>
+
+            <Form.Item label="Period" name="period">
+              <InputNumber />
+            </Form.Item>
+
             <Form.Item label="Matric No." name="matricNo">
               <InputNumber />
             </Form.Item>
@@ -59,7 +61,7 @@ const LessonNoteOne = ({ nextStep }) => {
               <InputNumber />
             </Form.Item>
 
-            <Form.Item label="Average">{average}</Form.Item>
+            {/* <Form.Item label="Average">{average}</Form.Item> */}
 
             <Form.Item>
               <Button type="primary" htmlType="submit">
