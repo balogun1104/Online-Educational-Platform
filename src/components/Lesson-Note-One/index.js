@@ -4,7 +4,7 @@ import "./styles.css";
 
 const { RangePicker } = DatePicker;
 
-const LessonNoteOne = ({ nextStep }) => {
+const LessonNoteOne = ({ nextStep, prevStep}) => {
   const [form] = Form.useForm();
   const [average, setAverage] = useState(null);
 
@@ -19,37 +19,55 @@ const LessonNoteOne = ({ nextStep }) => {
     <div className="lessonNoteWrapper">
       <div className="lessonNote">
         <div className="lessonNoteInner">
-        <h1>Lesson Plan</h1>
+          <h1>Lesson Plan</h1>
           <Form form={form} onFinish={nextStep} className="formWrapper">
-            <Form.Item label="Name" name="name">
+            <Form.Item
+              label="Name"
+              name="name"
+              rules={[{ required: true, message: "Please enter name here" }]}
+            >
               <Input />
             </Form.Item>
 
-            <Form.Item label="School" name="school">
+            <Form.Item label="School" name="school" rules={[
+                    { required: true, message: "Please enter school here" },
+                  ]}>
               <Input />
             </Form.Item>
 
-            <Form.Item label="Class" name="class">
+            <Form.Item label="Class" name="class" rules={[
+                    { required: true, message: "Please enter class here" },
+                  ]}>
               <Input />
             </Form.Item>
 
-            <Form.Item label="Subject" name="subject">
+            <Form.Item label="Subject" name="subject" rules={[
+                    { required: true, message: "Please enter subject here" },
+                  ]}>
               <Input />
             </Form.Item>
 
-            <Form.Item label="Topic" name="topic">
+            <Form.Item label="Topic" name="topic" rules={[
+                    { required: true, message: "Please enter topic here" },
+                  ]}>
               <Input />
             </Form.Item>
 
-            <Form.Item label="Date" name="date">
+            <Form.Item label="Date" name="date" rules={[
+                    { required: true, message: "Please enter date here" },
+                  ]}>
               <DatePicker />
             </Form.Item>
 
-            <Form.Item label="Period" name="period">
+            <Form.Item label="Period" name="period" rules={[
+                    { required: true, message: "Please enter period here" },
+                  ]}>
               <InputNumber />
             </Form.Item>
 
-            <Form.Item label="Matric No." name="matricNo">
+            <Form.Item label="Matric No." name="matricNo" rules={[
+                    { required: true, message: "Please enter matric number here" },
+                  ]}>
               <InputNumber />
             </Form.Item>
 
@@ -67,6 +85,8 @@ const LessonNoteOne = ({ nextStep }) => {
               <Button type="primary" htmlType="submit">
                 Continue
               </Button>
+
+              
             </Form.Item>
           </Form>
         </div>

@@ -9,6 +9,7 @@ import SignUpPage from "./components/SignIn/SignUp";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import WelcomeUserPage from "./pages/WelcomeUserPage";
+import PageSuccess from "./pages/PageSuccess";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/lessonplan" element={<LessonPlan />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/pagesuccess" element={<PageSuccess />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />

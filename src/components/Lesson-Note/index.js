@@ -1,4 +1,5 @@
 import React , {useState} from 'react'
+import { Prev } from 'react-bootstrap/esm/PageItem';
 import LessonNoteOne from '../Lesson-Note-One';
 import LessonNoteThree from '../Lesson-Note-Three';
 import LessonNoteTwo from '../Lesson-Note-Two';
@@ -21,7 +22,7 @@ const LessonNote = ({currentModal,
       };
 
       const prevStep = () => {
-        setStep(nextStep - 1)
+        setStep(nextStep - Prev)
       }
 
       const render = () => {
