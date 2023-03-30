@@ -17,7 +17,7 @@ const LessonNoteThree = ({ nextStep, prevStep }) => {
               name=""
               rules={[{ required: true, message: "Please enter school here" }]}
             >
-              <Input />
+              <Input className="lastInput" />
             </Form.Item>
 
            
