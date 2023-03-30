@@ -35,7 +35,7 @@ const HeaderLogin = () => {
             </h2>
           </div>
 
-          <div className="">
+          <div className="avatar">
             <Dropdown overlay={menu} placement="bottomRight">
               <Avatar>
                 {<img src={user.photoURL} /> ? (

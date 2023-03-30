@@ -9,11 +9,22 @@
     border: 1px solid gray;
     border-radius: 8px;
    margin-bottom: 2em;
-   display: flex;
+   /* display: flex; */
    justify-content: baseline;
    align-items: center;
 }
 
+.lessonNoteInner {
+    margin: 3em;
+   
+}
+
+h1{
+    text-align: center;
+}
+.ant-form-item-label{
+width: 10%;
+}
 .formWrapper{
     width: 100%;
 }
@@ -21,5 +32,13 @@
     .lessonNote {
     padding: 0em;
     width: 80vw;
+    border: 0;
+    }
+    .lessonNoteWrapper{
+        margin: 0px;
+    }
+    .lessonNoteInner {
+        margin: 0em;
+       
     }
 }
