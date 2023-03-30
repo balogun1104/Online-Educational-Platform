@@ -2,7 +2,7 @@ Button{
     display: none;
 }
 
-Input{
+.lastInput{
     height: 10em;
 }
 
